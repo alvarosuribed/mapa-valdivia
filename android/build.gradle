@@ -1,0 +1,39 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // Puedes agregar aquí dependencias de Gradle si las necesitas
+    }
+}
+
+allprojects {
+    repositories {
+        // ✅ Repositorio Mapbox con autenticación
+        maven {
+            url 'https://api.mapbox.com/downloads/v2/releases/maven'
+            authentication {
+                basic(BasicAuthentication)
+            }
+            credentials {
+                username = "mapbox"
+                password = project.hasProperty("MAPBOX_DOWNLOADS_TOKEN") ? project.property("MAPBOX_DOWNLOADS_TOKEN") : ""
+            }
+        }
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}

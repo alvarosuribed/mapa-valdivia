@@ -1,0 +1,44 @@
+name: mapa_valdivia
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.6.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  google_maps_flutter: ^2.5.0
+  mapbox_gl: ^0.16.0
+  geolocator: ^10.1.0
+  cupertino_icons: ^1.0.8
+  url_launcher: ^6.1.14
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/x_region_gimnasio_cendyr_valdivia.jpg
+    - assets/images/animas.png
+    - assets/images/Imagen3.png
+    - assets/images/Imagen4.png
+    - assets/images/Imagen5.png
+    - assets/images/Imagen6.png
+    - assets/images/Imagen7.png
+    - assets/images/Imagen8.png
+    - assets/images/Imagen9.png
+    - assets/images/Imagen10.png
+    - assets/images/Imagen11.png
+    - assets/images/Imagen12.png
+    - assets/images/Imagen13.png
+    - assets/images/Imagen14.png
+    - assets/images/Imagen15.png
+    - assets/images/Imagen16.png
+    - assets/images/Imagen17.png

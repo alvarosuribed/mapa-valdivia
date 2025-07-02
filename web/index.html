@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+  -->
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="mapa_valdivia">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <!-- Agregar las dependencias de Mapbox (versión más reciente) -->
+  <link
+    href="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css"
+    rel="stylesheet"
+  />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.js"></script>
+
+  <!-- Configuración del token de Mapbox -->
+  <script>
+    // Usar el token público correcto de tu dashboard
+    window.MAPBOX_ACCESS_TOKEN = 'pk.ey11jqiYWc2YXJwdXJpVeWk1iuYS6IaNtYQzMD1az';
+    
+    // Configurar mapboxgl cuando esté disponible
+    window.addEventListener('DOMContentLoaded', function() {
+      if (window.mapboxgl) {
+        window.mapboxgl.accessToken = window.MAPBOX_ACCESS_TOKEN;
+        console.log('Mapbox token configurado:', window.MAPBOX_ACCESS_TOKEN);
+      }
+    });
+  </script>
+
+  <title>mapa_valdivia</title>
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
